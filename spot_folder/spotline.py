@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # flask app variable
-APP = Flask(__name__)
+app = Flask(__name__)
 
 # setting market parameters for Spotify licensing issues
 market = [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", 
@@ -41,11 +41,11 @@ credentials = SpotifyClientCredentials(client_id=SP_CLIENT_ID, client_secret=SP_
 token = credentials.get_access_token()
 spotify = spotipy.Spotify(auth=token)
 
-@APP.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
-@APP.route('/output', methods=['POST'])
+@app.route('/output', methods=['POST'])
 def output():
     # connecting html to request
     # user inputs song name here
@@ -165,7 +165,7 @@ def output():
         )
 
 # get all tracks data from an artist into a data frame or csv
-@APP.route('/artist_tracks', methods=['POST', 'GET'])
+@app.route('/artist_tracks', methods=['POST', 'GET'])
 def artist_tracks():
     # connecting html to request
     # user inputs song name here

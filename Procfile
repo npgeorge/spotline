@@ -1,2 +1,1 @@
-web: gunicorn spotline:APP
-
+web: gunicorn --chdir spot_folder spotline:app
