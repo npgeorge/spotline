@@ -319,5 +319,5 @@ def artist_tracks():
 
 
 if __name__ == '__main__':
-    APP.debug = True #Uncomment to enable debugging
-    APP.run() #Run the Server
+    app.debug = True #Uncomment to enable debugging
+    app.run() #Run the Server
