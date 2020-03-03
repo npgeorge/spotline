@@ -7,8 +7,8 @@ import time
 
 # #################################################
 #   Spotify API user credentials, generate token
-CLIENT_ID = "849709fe2afc44ec94af7527ce55999e"
-CLIENT_SECRET = "41b39f8cd0824289aebde74f22d853e3"
+CLIENT_ID = "--keys--here--"
+CLIENT_SECRET = "--keys--here--"
 credentials = SpotifyClientCredentials(
         client_id=CLIENT_ID,
         client_secret=CLIENT_SECRET)
