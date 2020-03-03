@@ -1,1 +1,2 @@
-web: gunicorn app:spotline
+web: gunicorn spotline:APP
+
