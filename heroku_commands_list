@@ -1,0 +1,95 @@
+heroku deployment steps
+
+navigate to root directory
+
+git remote -v
+    this will show the current origin link to github repo
+
+ensure you are in root directory of your heroku app
+
+/Users/ngeorge/Documents/Lambda/Sprint_3/Unit_3/inclass-twittoff
+    this is the location of my app
+
+heroku create inclass-twittoff
+    this created the repo on heroku
+
+git remote -v
+    passing this command in again will show the association now between your heroku app and github
+    for example:
+
+    heroku	https://git.heroku.com/inclass-twittoff.git (fetch)
+    heroku	https://git.heroku.com/inclass-twittoff.git (push)
+    origin	https://github.com/npgeorge/inclass-twittoff.git (fetch)
+    origin	https://github.com/npgeorge/inclass-twittoff.git (push)   
+
+
+git push heroku master
+    this will push your current origin github files to heroku
+
+
+heroku logs --tail
+    outputs logs for debugging
+
+create a Procfile, a heroku specific file we need to have in our repo
+
+heroku run bash
+    logs into the server
+
+    server commands:
+    whoami
+        returns your user id (i think)
+    ls -al
+        returns a list of files on the server
+
+
+configure some environment variables
+
+    heroku config:set BASILICA_API_KEY="_____"
+    heroku config:set TWITTER_API_KEY="_____"
+    heroku config:set TWITTER_API_SECRET="______"
+    heroku config:set TWITTER_ACCESS_TOKEN="______"
+    heroku config:set TWITTER_ACCESS_TOKEN_SECRET="_____"
+
+heroku config
+    shows all of our environment variables, make sure they are set correctly
+
+
+heroku addons:create heroku-postgresql:hobby-dev
+    provision a new pg database (free tier) from command-line
+
+(we connected this new database to tableplus)
+
+heroku run bash
+    check that this is working
+
+then..
+Need to migrate db after provisioning. However you're migrating your local db.
+FLASK_APP=twittoff flask db init
+FLASK_APP=twittoff flask db migrate
+FLASK_APP=twittoff flask db upgrade 
+
+heroku run bash
+    check that this is working
+
+
+on heroku dashboard heroku job scheduler
+    can schedule scripts to run at certain time intervals - awesome
+    you can run any python script as long as you have a pip file and schedule scripts to run at any hour of any day
+
+
+old
+
+[packages]
+spotipy = "*"
+flask = "*"
+request = "*"
+jsonify = "*"
+flask-sqlalchemy = "*"
+requests = "*"
+lyricsgenius = "*"
+oauth2 = "*"
+tqdm = "*"
+pandas = "*"
+ipywidgets = "*"
+numpy = "*"
+dotenv = "*"
