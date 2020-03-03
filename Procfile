@@ -1,2 +1,2 @@
-gunicorn spotline:APP --log-file -
+web: gunicorn spotline:APP --log-file -
 
