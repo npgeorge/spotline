@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 import lyricsgenius as genius
 import pandas as pd
 import numpy as np
-#import os
+import os
 #from dotenv import load_dotenv
 
 #load_dotenv()
@@ -318,6 +318,7 @@ def artist_tracks():
         headers={"Content-disposition":
                  "attachment; filename=artist_tracks.csv"})
 
+run(host='0.0.0.0', port=os.environ.get('PORT', '5000'))
 
 if __name__ == '__main__':
     app.debug = True #Uncomment to enable debugging
