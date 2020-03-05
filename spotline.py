@@ -322,3 +322,4 @@ def artist_tracks():
 if __name__ == '__main__':
     app.debug = True #Uncomment to enable debugging
     app.run() #Run the Server
+    .listen(process.env.PORT || 5000)
