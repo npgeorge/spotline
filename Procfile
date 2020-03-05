@@ -1,1 +1,1 @@
-web: gunicorn --chdir spot_folder spotline:app
+web: gunicorn spotline:app --log-file=-

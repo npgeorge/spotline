@@ -11,7 +11,7 @@ flask = "*"
 request = "*"
 jsonify = "*"
 flask-sqlalchemy = "*"
-requests = "*"
+requests = {extras = ["security"],version = "*"}
 lyricsgenius = "*"
 oauth2 = "*"
 tqdm = "*"
