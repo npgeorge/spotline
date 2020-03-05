@@ -24,11 +24,11 @@ market = [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO
       "US", "UY", "VN" ]
 
 # spotipy keys, put in env file
-SP_CLIENT_ID = os.getenv("SP_CLIENT_ID", default="OOPS")
-SP_CLIENT_SECRET = os.getenv("SP_CLIENT_SECRET", default="OOPS")
+SP_CLIENT_ID = "849709fe2afc44ec94af7527ce55999e"
+SP_CLIENT_SECRET = "41b39f8cd0824289aebde74f22d853e3"
 
 # genius keys
-GENIUS_ACCESS_TOKEN = os.getenv("GENIUS_ACCESS_TOKEN", default="OOPS")
+GENIUS_ACCESS_TOKEN = "ZV-wzEQ01W47OJSRBKTms7rwqvm4MrcGJV1FX1YV1l9R7q5RcSbE7ojT9rCtvAkt"
 genius_api = genius.Genius(GENIUS_ACCESS_TOKEN)
 genius.verbose = True                         # Keep status messages on
 genius.remove_section_headers = False         # Remove section headers (e.g. [Chorus]) from lyrics when searching
