@@ -1,1 +1,1 @@
-web: gunicorn spotline:app
+web: gunicorn spotline:app --timeout 1200
