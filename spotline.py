@@ -265,8 +265,8 @@ def artist_tracks():
             track_count+=1
 
 
-    sleep_min = 2
-    sleep_max = 5
+    sleep_min = 1
+    sleep_max = 2
     start_time = time.time()
     request_count = 0
     for i in spotify_albums:
