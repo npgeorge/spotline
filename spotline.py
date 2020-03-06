@@ -308,15 +308,15 @@ def artist_tracks():
     final_df = df.sort_values('popularity', ascending=False).drop_duplicates('name').sort_index()
 
     #renders data frame template
-    #return render_template('output.html',  tables=[final_df.to_html(classes='data')], titles=final_df.columns.values)
+    return render_template('output.html',  tables=[final_df.to_html(classes='data')], titles=final_df.columns.values)
 
     # prompts csv download
-    csv = final_df
-    return Response(
-        csv,
-        mimetype="text/csv",
-        headers={"Content-disposition":
-                 "attachment; filename=artist_tracks.csv"})
+    #csv = final_df
+    #return Response(
+    #    csv,
+    #    mimetype="text/csv",
+    #    headers={"Content-disposition":
+    #             "attachment; filename=artist_tracks.csv"})
 
 #run(host='0.0.0.0', port=os.environ.get('PORT', '5000'))
 
